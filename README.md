@@ -57,7 +57,8 @@ Another relevant point is that this method is quite expensive to process as the 
 
 Overall, the biggest hidrance of this method to solve this problem and towards improving it is it's lack of a good middle metric to break the solution into smaller steps for simplification, as even 8 bits means 256 possible inputs. While it could be broken into steps that reduce the number of inputs of the next (such as convolutions and matrix multiplications), it would need to focus on solving each of them as separate problems simultaneously. For example, dividing it into steps that each reduce the next's output size by a ratio of 4:
 - It would need 4 steps for 8 bits;
-- At each step, the results for the respective step individuals would be generated and stored
-- Each result would be used in the individuals of the next step
-- Individuals would be tested accross multiple combinations for each input, on top of also being tested for each out
+- At each step, the results for the respective step individuals would be generated and stored;
+- Each result would be used in the individuals of the next step;
+- Individuals would be tested accross multiple combinations for each input, on top of also being tested for each output.
+
 At a first glance this would heighten computation time per test, even if it would simplify it's structure in a way that it would promote it learning in chunks. And because of the risk of small alteration on individuals in earlier steps  cascading, afterwards, as well as badly adapted steps at any point biasing other steps, it makes it harder to justify testing it as an alternative even if it should be analyzed.
